@@ -4,5 +4,5 @@ function solution(s) {
   return answer;
 }
 
-let str = 'ItisTimeToStudy';
+const str = 'ItisTimeToStudy';
 console.log(solution(str));

@@ -7,5 +7,5 @@ function solution(s) {
   return answer;
 }
 
-let str = 'KoreaTimeGood';
+const str = 'KoreaTimeGood';
 console.log(solution(str));
