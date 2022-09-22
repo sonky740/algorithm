@@ -14,9 +14,9 @@ function solution() {
   }
 }
 
-// solution([-3,-2,-1,0,1,2,3]) // [-3,3]
-// solution([-2,0,1,3]) // undefined
-// solution([1,2,3]) // undefined
+solution([-3, -2, -1, 0, 1, 2, 3]); // [-3,3]
+solution([-2, 0, 1, 3]); // undefined
+solution([1, 2, 3]); // undefined
 
 // Time Complexity - O(N)
 // Space Complexity - O(1)

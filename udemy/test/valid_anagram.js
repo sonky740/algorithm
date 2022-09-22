@@ -26,11 +26,11 @@ function solution(first, second) {
   return true;
 }
 
-// solution('', ''); // true
-// solution('aaz', 'zza'); // false
-// solution('anagram', 'nagaram'); // true
-// solution('rat', 'car'); // false) // false
-// solution('awesome', 'awesom'); // false
-// solution('amanaplanacanalpanama', 'acanalmanplanpamana'); // false
-// solution('qwerty', 'qeywrt'); // true
-// solution('texttwisttime', 'timetwisttext'); // true
+solution('', ''); // true
+solution('aaz', 'zza'); // false
+solution('anagram', 'nagaram'); // true
+solution('rat', 'car'); // false) // false
+solution('awesome', 'awesom'); // false
+solution('amanaplanacanalpanama', 'acanalmanplanpamana'); // false
+solution('qwerty', 'qeywrt'); // true
+solution('texttwisttime', 'timetwisttext'); // true
