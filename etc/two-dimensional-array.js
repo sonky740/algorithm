@@ -1,3 +1,4 @@
+// N*N 크기의 2차원 배열 matrix와 시계방향으로 90도씩 회전한 횟수 r이 매개변수로 주어질 때, matrix가 시계방향으로 r번 회전한 결과를 return 하도록.
 function solution(matrix, r) {
   if (matrix.length === 0) return [];
 
