@@ -1,5 +1,5 @@
 // arr에서 연속된 num만큼 최대 합 (슬라이딩 윈도우)
-function maxSubarraySum(arr, num) {
+function solution(arr, num) {
   let maxSum = 0;
   let tempSum = 0;
   if (arr.length < num) return null;
@@ -17,4 +17,4 @@ function maxSubarraySum(arr, num) {
   return maxSum;
 }
 
-maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3);
+solution([2, 6, 9, 2, 1, 8, 5, 6, 3], 3);
