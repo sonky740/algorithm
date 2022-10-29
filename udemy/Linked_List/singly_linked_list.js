@@ -129,3 +129,5 @@ list.push('HELLO7');
 list.push('HELLO8');
 list.push('HELLO9');
 list.push('HELLO10');
+
+console.log(list);
