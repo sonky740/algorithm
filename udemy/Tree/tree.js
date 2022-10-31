@@ -75,6 +75,22 @@ class BinarySearchTree {
     }
     return false;
   }
+  // BFS: 너비 우선 탐색
+  // BFS는 루트 노드에서 시작해서 인접한 노드를 먼저 탐색하는 방법이다.
+  // BFS는 큐 자료구조를 사용한다.
+  BFS() {
+    let node = this.root;
+    let data = [];
+    let queue = [];
+    queue.push(node);
+    while (queue.length) {
+      node = queue.shift();
+      data.push(node.value);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    return data;
+  }
 }
 
 const tree = new BinarySearchTree();
