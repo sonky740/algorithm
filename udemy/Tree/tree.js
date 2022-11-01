@@ -91,9 +91,56 @@ class BinarySearchTree {
     }
     return data;
   }
+  // DFS: 깊이 우선 탐색
+  // DFS는 루트 노드에서 시작해서 자식 노드를 먼저 탐색하는 방법이다.
+  // DFS는 스택 자료구조를 사용한다.
+  // DFS는 세 가지 방법이 있다.
+  // 1. 전위 순회: 루트 노드 -> 왼쪽 자식 노드 -> 오른쪽 자식 노드
+  DFSPreOrder() {
+    let data = [];
+    let current = this.root;
+    function traverse(node) {
+      data.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+    traverse(current);
+    return data;
+  }
+  // 2. 후위 순회: 왼쪽 자식 노드 -> 오른쪽 자식 노드 -> 루트 노드
+  DFSPostOrder() {
+    let data = [];
+    let current = this.root;
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      data.push(node.value);
+    }
+    traverse(current);
+    return data;
+  }
+  // 3. 중위 순회: 왼쪽 자식 노드 -> 루트 노드 -> 오른쪽 자식 노드
+  DFSInOrder() {
+    let data = [];
+    let current = this.root;
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      data.push(node.value);
+      if (node.right) traverse(node.right);
+    }
+    traverse(current);
+    return data;
+  }
 }
+
+//   10
+//  6 15
+// 3 8 20
 
 const tree = new BinarySearchTree();
 tree.insert(10);
-tree.insert(5);
-tree.insert(13);
+tree.insert(6);
+tree.insert(15);
+tree.insert(3);
+tree.insert(8);
+tree.insert(20);
