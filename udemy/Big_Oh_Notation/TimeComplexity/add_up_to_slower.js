@@ -1,4 +1,5 @@
-// O(n)
+// 시간 복잡도
+// O(n) - Linear Time
 function addUpTo(n) {
   let total = 0;
   for (let i = 1; i <= n; i++) {
