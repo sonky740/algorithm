@@ -10,12 +10,12 @@
 // 3 ≤ k ≤ 10
 function solution(n, k) {
   let answer = 0;
-  // n을 k진수로 바꾸기
   let str = n.toString(k);
   str = str.split('0').filter((v) => {
     return v !== '';
   });
-  // 소수인지 판별하기
+
+  // 소수 구하기
   function isPrime(num) {
     if (num === 1) return false;
     for (let i = 2; i <= Math.sqrt(num); i++) {
@@ -23,7 +23,8 @@ function solution(n, k) {
     }
     return true;
   }
-  // 소수인지 판별하기
+
+  // k진수에서 소수 개수 구하기
   for (let i = 0; i < str.length; i++) {
     if (isPrime(Number(str[i]))) answer++;
   }
