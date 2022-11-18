@@ -1,4 +1,3 @@
-// [TODO] 런타임 에러남.
 // 숫자 카드 나누기 lv.2
 // https://school.programmers.co.kr/learn/courses/30/lessons/135807
 // 철수와 영희는 선생님으로부터 숫자가 하나씩 적힌 카드들을 절반씩 나눠서 가진 후, 다음 두 조건 중 하나를 만족하는 가장 큰 양의 정수 a의 값을 구하려고 합니다.
@@ -10,8 +9,8 @@
 // arrayA와 arrayB에는 중복된 원소가 있을 수 있습니다.
 function solution(arrA, arrB) {
   let answer = 0;
-  const maxNumA = Math.max(...arrA);
-  const maxNumB = Math.max(...arrB);
+  const maxNumA = arrA[arrA.length - 1]; // Math.max는 아주 큰 배열에서 메모리 초과가 나서 런타임 에러 발생
+  const maxNumB = arrB[arrB.length - 1];
   const divisorA = [];
   const divisorB = [];
   const answerArr = [];
@@ -48,6 +47,22 @@ function solution(arrA, arrB) {
 
   return answer;
 }
+
+// function solution(arrayA, arrayB) {
+//     const aResult = getAnswer(arrayA, arrayB)
+//     const bResult = getAnswer(arrayB, arrayA)
+
+//     return aResult > bResult ? aResult : bResult
+// }
+
+// function getAnswer (A, B) {
+//     A.sort((a, b) => a - b)
+//     for (let i = A[0]; i > 1; i--) {
+//         if (A.every(a => a % i === 0) && !B.some(b => b % i === 0)) return i
+//     }
+//     return 0
+// }
+
 solution([10, 17], [5, 20]); // 0
 solution([10, 20], [5, 17]); // 10
 solution([14, 35, 119], [18, 30, 102]); // 7
