@@ -13,23 +13,14 @@
 // h는 명함의 세로 길이를 나타냅니다.
 // w와 h는 1 이상 1,000 이하인 자연수입니다.
 function solution(sizes) {
-  let answer = 0;
-  let maxWidth = 0;
-  let maxHeight = 0;
+  const rotated = sizes.map(([w, h]) => (w < h ? [h, w] : [w, h]));
 
-  for (let i = 0; i < sizes.length; i++) {
-    if (sizes[i][0] > sizes[i][1]) {
-      if (maxWidth < sizes[i][0]) maxWidth = sizes[i][0];
-      if (maxHeight < sizes[i][1]) maxHeight = sizes[i][1];
-    } else {
-      if (maxWidth < sizes[i][1]) maxWidth = sizes[i][1];
-      if (maxHeight < sizes[i][0]) maxHeight = sizes[i][0];
-    }
-  }
-
-  answer = maxWidth * maxHeight;
-
-  return answer;
+  let maxSize = [0, 0];
+  rotated.forEach(([w, h]) => {
+    if (w > maxSize[0]) maxSize[0] = w;
+    if (h > maxSize[1]) maxSize[1] = h;
+  });
+  return maxSize[0] * maxSize[1];
 }
 
 // solution([[60, 50], [30, 70], [60, 30], [80, 40]]) // 4000
