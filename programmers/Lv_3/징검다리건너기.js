@@ -19,7 +19,6 @@ function solution(stones, k) {
 
   while (left <= right) {
     const mid = ((left + right) / 2) >> 0;
-    console.log(mid);
 
     let count = 0;
     for (let i = 0; i < stones.length; i++) {
